@@ -13,12 +13,12 @@ struct Universities: Decodable {
     var webPages:[String]
     var name:String
     var alphaTwoCode:String
-    var domains:String
+    var domains:[String]
     
     enum CodingKeys:String, CodingKey {
         case stateProvince = "state-province"
         case country, name, domains
         case webPages = "web_pages"
-        case alphaTwoCode = "apha_two_code"
+        case alphaTwoCode = "alpha_two_code"
     }
 }

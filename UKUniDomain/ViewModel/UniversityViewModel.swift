@@ -17,7 +17,7 @@ class UniversityViewModel {
         return universities.count
     }
     
-    private let networkManager:Networking = NetworkManager()
+    private let networkManager = NetworkManager()
     
     func getUniversities() {
         let url = "http://universities.hipolabs.com/search?country=United+Kingdom"
@@ -25,7 +25,7 @@ class UniversityViewModel {
         let futurePublisher = networkManager.getUni(urlString: url, type: Universities.self)
         
         anyCancellable = futurePublisher.sink { completion in
-            
+            print(completion)
         } receiveValue: { universities in
             self.universities = universities
         }

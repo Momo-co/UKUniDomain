@@ -29,6 +29,7 @@ class NetworkManager: Networking {
                 
                 do{
                     let universities = try jsonDecoder.decode([T].self, from: _data)
+                    
                     promise(.success(universities))
                 } catch {
                     promise(.failure(error))

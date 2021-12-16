@@ -20,13 +20,30 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="04l-b6-Exn">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="universityCell" id="04l-b6-Exn" customClass="UniversityTableViewCell" customModule="UKUniDomain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="31"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="04l-b6-Exn" id="Dec-e3-NBk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-ek-eay">
+                                                    <rect key="frame" x="5" y="5" width="404" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SAr-ek-eay" firstAttribute="top" secondItem="Dec-e3-NBk" secondAttribute="top" constant="5" id="94Z-28-Dcq"/>
+                                                <constraint firstItem="SAr-ek-eay" firstAttribute="leading" secondItem="Dec-e3-NBk" secondAttribute="leading" constant="5" id="Wnp-Sy-Mub"/>
+                                                <constraint firstAttribute="trailing" secondItem="SAr-ek-eay" secondAttribute="trailing" constant="5" id="oPO-ay-cqd"/>
+                                                <constraint firstAttribute="bottom" secondItem="SAr-ek-eay" secondAttribute="bottom" constant="5" id="ubg-9r-yV6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="universityNameLabel" destination="SAr-ek-eay" id="trm-fm-CSK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -41,6 +58,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List Of Universities" id="5rl-IR-KGr"/>
+                    <connections>
+                        <outlet property="tableView" destination="OyD-c3-JBE" id="DpU-12-Ik0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
