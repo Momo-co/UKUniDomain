@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class UniversityDomainViewController: UIViewController {
     
@@ -79,6 +80,20 @@ extension UniversityDomainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 0 {
+            if let webPage = university?.webPages[indexPath.row], let url = URL(string: webPage) {
+                let safariViewController = SFSafariViewController(url: url)
+                present(safariViewController, animated: true, completion: nil)
+                safariViewController.delegate = self
+            }
+        }
+    }
+    
+}
+
+extension UniversityDomainViewController: SFSafariViewControllerDelegate {
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
