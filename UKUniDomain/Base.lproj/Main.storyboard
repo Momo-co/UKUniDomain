@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Of Universities-->
+        <!--UK Universities-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UKUniDomain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UniversityListViewController" customModule="UKUniDomain" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,14 +20,14 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="universityCell" id="04l-b6-Exn" customClass="UniversityTableViewCell" customModule="UKUniDomain" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="universityNameCell" id="04l-b6-Exn" customClass="UniversityTableViewCell" customModule="UKUniDomain" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="31"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="04l-b6-Exn" id="Dec-e3-NBk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-ek-eay">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-ek-eay">
                                                     <rect key="frame" x="5" y="5" width="404" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -57,14 +57,83 @@
                             <constraint firstItem="OyD-c3-JBE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t7Y-ez-kSG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="List Of Universities" id="5rl-IR-KGr"/>
+                    <navigationItem key="navigationItem" title="UK Universities" id="5rl-IR-KGr"/>
                     <connections>
                         <outlet property="tableView" destination="OyD-c3-JBE" id="DpU-12-Ik0"/>
+                        <segue destination="c9J-v3-Hzo" kind="show" identifier="goToUniversityDetails" id="bek-i3-vQR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="897.10144927536237" y="51.5625"/>
+        </scene>
+        <!--University Details-->
+        <scene sceneID="Ap9-fY-2AT">
+            <objects>
+                <viewController id="c9J-v3-Hzo" customClass="UniversityDomainViewController" customModule="UKUniDomain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cqw-zN-Cni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtQ-ba-HgW">
+                                <rect key="frame" x="0.0" y="138" width="414" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hil-Pd-Z1H">
+                                <rect key="frame" x="0.0" y="196" width="414" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="universityCell" id="wG6-Vv-TlF" customClass="DomainTableViewCell" customModule="UKUniDomain" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wG6-Vv-TlF" id="vG6-7L-RUF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-FA-I8A">
+                                                    <rect key="frame" x="5" y="5" width="404" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hlw-FA-I8A" firstAttribute="top" secondItem="vG6-7L-RUF" secondAttribute="top" constant="5" id="CAe-lD-u6y"/>
+                                                <constraint firstAttribute="bottom" secondItem="hlw-FA-I8A" secondAttribute="bottom" constant="5" id="Gnd-Ed-XdA"/>
+                                                <constraint firstAttribute="trailing" secondItem="hlw-FA-I8A" secondAttribute="trailing" constant="5" id="Us7-qQ-RzU"/>
+                                                <constraint firstItem="hlw-FA-I8A" firstAttribute="leading" secondItem="vG6-7L-RUF" secondAttribute="leading" constant="5" id="kK2-Br-qGF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="universityDetailLabel" destination="hlw-FA-I8A" id="Oko-GM-Nm1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Zb-vy-Hz7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XtQ-ba-HgW" firstAttribute="top" secondItem="0Zb-vy-Hz7" secondAttribute="top" constant="50" id="0YF-e7-lRD"/>
+                            <constraint firstItem="0Zb-vy-Hz7" firstAttribute="trailing" secondItem="XtQ-ba-HgW" secondAttribute="trailing" id="E0y-Tu-zfk"/>
+                            <constraint firstItem="Hil-Pd-Z1H" firstAttribute="leading" secondItem="0Zb-vy-Hz7" secondAttribute="leading" id="GVA-nA-1OA"/>
+                            <constraint firstItem="0Zb-vy-Hz7" firstAttribute="trailing" secondItem="Hil-Pd-Z1H" secondAttribute="trailing" id="JcY-rG-CnM"/>
+                            <constraint firstItem="Hil-Pd-Z1H" firstAttribute="top" secondItem="XtQ-ba-HgW" secondAttribute="bottom" constant="10" id="P0V-sW-RBI"/>
+                            <constraint firstItem="0Zb-vy-Hz7" firstAttribute="bottom" secondItem="Hil-Pd-Z1H" secondAttribute="bottom" id="aye-NO-Clq"/>
+                            <constraint firstItem="XtQ-ba-HgW" firstAttribute="leading" secondItem="0Zb-vy-Hz7" secondAttribute="leading" id="oJ5-D7-6gq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="University Details" id="j2M-3P-34D"/>
+                    <connections>
+                        <outlet property="tableView" destination="Hil-Pd-Z1H" id="pdX-DD-AZX"/>
+                        <outlet property="universityNameLabel" destination="XtQ-ba-HgW" id="XxN-Un-uWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Li6-CY-72J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5652173913045" y="51.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3jK-hK-D7U">

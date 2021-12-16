@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		08ED8A46276A69410072C7A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A45276A69410072C7A6 /* AppDelegate.swift */; };
 		08ED8A48276A69410072C7A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A47276A69410072C7A6 /* SceneDelegate.swift */; };
-		08ED8A4A276A69410072C7A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A49276A69410072C7A6 /* ViewController.swift */; };
+		08ED8A4A276A69410072C7A6 /* UniversityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A49276A69410072C7A6 /* UniversityListViewController.swift */; };
 		08ED8A4D276A69410072C7A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08ED8A4B276A69410072C7A6 /* Main.storyboard */; };
 		08ED8A50276A69410072C7A6 /* UKUniDomain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A4E276A69410072C7A6 /* UKUniDomain.xcdatamodeld */; };
 		08ED8A52276A694E0072C7A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08ED8A51276A694E0072C7A6 /* Assets.xcassets */; };
@@ -21,6 +21,8 @@
 		08ED8A7D276A6BAD0072C7A6 /* Universities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A7C276A6BAD0072C7A6 /* Universities.swift */; };
 		08ED8A80276B9C8C0072C7A6 /* UniversityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A7F276B9C8C0072C7A6 /* UniversityViewModel.swift */; };
 		08ED8A82276BAE3B0072C7A6 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A81276BAE3B0072C7A6 /* UniversityTableViewCell.swift */; };
+		08ED8A84276BE4D10072C7A6 /* UniversityDomainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A83276BE4D10072C7A6 /* UniversityDomainViewController.swift */; };
+		08ED8A86276BF1BE0072C7A6 /* DomainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED8A85276BF1BE0072C7A6 /* DomainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,7 @@
 		08ED8A42276A69400072C7A6 /* UKUniDomain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UKUniDomain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08ED8A45276A69410072C7A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08ED8A47276A69410072C7A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08ED8A49276A69410072C7A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		08ED8A49276A69410072C7A6 /* UniversityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityListViewController.swift; sourceTree = "<group>"; };
 		08ED8A4C276A69410072C7A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08ED8A4F276A69410072C7A6 /* UKUniDomain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UKUniDomain.xcdatamodel; sourceTree = "<group>"; };
 		08ED8A51276A694E0072C7A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		08ED8A7C276A6BAD0072C7A6 /* Universities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Universities.swift; sourceTree = "<group>"; };
 		08ED8A7F276B9C8C0072C7A6 /* UniversityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewModel.swift; sourceTree = "<group>"; };
 		08ED8A81276BAE3B0072C7A6 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
+		08ED8A83276BE4D10072C7A6 /* UniversityDomainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityDomainViewController.swift; sourceTree = "<group>"; };
+		08ED8A85276BF1BE0072C7A6 /* DomainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +118,15 @@
 				08ED8A78276A6AA80072C7A6 /* Network */,
 				08ED8A45276A69410072C7A6 /* AppDelegate.swift */,
 				08ED8A47276A69410072C7A6 /* SceneDelegate.swift */,
-				08ED8A49276A69410072C7A6 /* ViewController.swift */,
+				08ED8A49276A69410072C7A6 /* UniversityListViewController.swift */,
 				08ED8A4B276A69410072C7A6 /* Main.storyboard */,
 				08ED8A51276A694E0072C7A6 /* Assets.xcassets */,
 				08ED8A53276A694E0072C7A6 /* LaunchScreen.storyboard */,
 				08ED8A56276A694E0072C7A6 /* Info.plist */,
 				08ED8A4E276A69410072C7A6 /* UKUniDomain.xcdatamodeld */,
 				08ED8A81276BAE3B0072C7A6 /* UniversityTableViewCell.swift */,
+				08ED8A83276BE4D10072C7A6 /* UniversityDomainViewController.swift */,
+				08ED8A85276BF1BE0072C7A6 /* DomainTableViewCell.swift */,
 			);
 			path = UKUniDomain;
 			sourceTree = "<group>";
@@ -298,13 +304,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				08ED8A50276A69410072C7A6 /* UKUniDomain.xcdatamodeld in Sources */,
-				08ED8A4A276A69410072C7A6 /* ViewController.swift in Sources */,
+				08ED8A84276BE4D10072C7A6 /* UniversityDomainViewController.swift in Sources */,
+				08ED8A4A276A69410072C7A6 /* UniversityListViewController.swift in Sources */,
 				08ED8A7A276A6ABD0072C7A6 /* NetworkManager.swift in Sources */,
 				08ED8A80276B9C8C0072C7A6 /* UniversityViewModel.swift in Sources */,
 				08ED8A7D276A6BAD0072C7A6 /* Universities.swift in Sources */,
 				08ED8A82276BAE3B0072C7A6 /* UniversityTableViewCell.swift in Sources */,
 				08ED8A46276A69410072C7A6 /* AppDelegate.swift in Sources */,
 				08ED8A48276A69410072C7A6 /* SceneDelegate.swift in Sources */,
+				08ED8A86276BF1BE0072C7A6 /* DomainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

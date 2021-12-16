@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+class UniversityListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let universityViewModel = UniversityViewModel()
@@ -25,23 +25,30 @@ class ViewController: UIViewController {
         })
         
         tableView.dataSource = self
-        
+        tableView.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         cancellable?.cancel()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let universityDomainViewController = segue.destination as? UniversityDomainViewController
+        universityDomainViewController?.university = sender as? Universities
+    }
 
 }
 
-extension ViewController: UITableViewDataSource {
+extension UniversityListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return universityViewModel.numberOfUniversities
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "universityCell") as? UniversityTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "universityNameCell") as? UniversityTableViewCell else {
             return UITableViewCell()
         }
         let currentUniversityCell = universityViewModel.getAUniversity(index: indexPath.row)
@@ -49,6 +56,13 @@ extension ViewController: UITableViewDataSource {
         cell.universityNameLabel.text = currentUniversityCell.name
         
         return cell
+    }
+}
+
+extension UniversityListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedUniversityCell = universityViewModel.getAUniversity(index: indexPath.row)
+        performSegue(withIdentifier: "goToUniversityDetails", sender: selectedUniversityCell)
     }
 }
 
