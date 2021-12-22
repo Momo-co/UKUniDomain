@@ -11,13 +11,14 @@ import Combine
 class UniversityListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let universityViewModel = UniversityViewModel()
+    let universityViewModel = UniversityViewModel(network: NetworkManager())
     var cancellable:AnyCancellable?
-    
+    let urlAPI = "http://universities.hipolabs.com/search?country=United+Kingdom"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        universityViewModel.getUniversities()
+        universityViewModel.getUniversities(url: urlAPI)
         cancellable = universityViewModel.$universities.sink(receiveValue: { universities in
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -1,0 +1,16 @@
+PODS:
+  - SnapshotTesting (1.9.0)
+
+DEPENDENCIES:
+  - SnapshotTesting (~> 1.9.0)
+
+SPEC REPOS:
+  trunk:
+    - SnapshotTesting
+
+SPEC CHECKSUMS:
+  SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
+
+PODFILE CHECKSUM: 3b587e4b966725614b5d7d03b31455601c5627c3
+
+COCOAPODS: 1.8.4

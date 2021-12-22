@@ -12,26 +12,36 @@ class UniversityViewModel {
     @Published private(set) var universities:[Universities] = []
     
     var anyCancellable:AnyCancellable?
+        
+    var numberOfUniversities:Int = 0
     
-    var numberOfUniversities:Int {
-        return universities.count
+    private var network: Networking
+    
+    init(network: Networking) {
+        self.network = network
     }
     
-    private let networkManager = NetworkManager()
-    
-    func getUniversities() {
-        let url = "http://universities.hipolabs.com/search?country=United+Kingdom"
+    func getUniversities(url: String) {
         
-        let futurePublisher = networkManager.getUni(urlString: url, type: Universities.self)
+        let futurePublisher = network.getUni(urlString: url, type: Universities.self)
         
-        anyCancellable = futurePublisher.sink { completion in
+        anyCancellable = futurePublisher.sink {
+            completion in
             print(completion)
-        } receiveValue: { universities in
-            self.universities = universities
+        } receiveValue: { [weak self]
+            universities in
+            self?.universities = universities
+            self?.numberOfUniversities = self?.universities.count ?? 0
         }
     }
     
     func getAUniversity(index: Int) -> Universities {
+        if index < 0 {
+            return universities[0]
+        }
+        if index > 345 {
+            return universities[345]
+        }
         return universities[index]
     }
     

@@ -8,12 +8,17 @@
 import Foundation
 import Combine
 
+enum NetworkError: Error{
+    case dataNotFound
+    case parsingError
+}
+
 protocol Networking {
-    func getUni<T:Decodable>(urlString:String, type:T.Type) -> Future<[T], Error>
+    func getUni<T:Decodable>(urlString:String, type:T.Type) -> Future<[T], NetworkError>
 }
 
 class NetworkManager: Networking {
-    func getUni<T:Decodable>(urlString:String, type:T.Type) -> Future<[T], Error> {
+    func getUni<T:Decodable>(urlString:String, type:T.Type) -> Future<[T], NetworkError> {
         return Future { promise in
             let urlSession = URLSession.shared
             guard let url = URL(string: urlString) else {
@@ -22,6 +27,7 @@ class NetworkManager: Networking {
             
             let dataTask = urlSession.dataTask(with: url) { data, urlResponse, error in
                 guard let _data = data else {
+                    promise(.failure(NetworkError.dataNotFound))
                     return
                 }
                 
@@ -32,7 +38,7 @@ class NetworkManager: Networking {
                     
                     promise(.success(universities))
                 } catch {
-                    promise(.failure(error))
+                    promise(.failure(NetworkError.parsingError))
                 }
             }
             dataTask.resume()
