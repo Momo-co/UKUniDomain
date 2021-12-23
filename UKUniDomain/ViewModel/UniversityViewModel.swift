@@ -28,10 +28,10 @@ class UniversityViewModel {
         anyCancellable = futurePublisher.sink {
             completion in
             print(completion)
-        } receiveValue: { [weak self]
+        } receiveValue: {
             universities in
-            self?.universities = universities
-            self?.numberOfUniversities = self?.universities.count ?? 0
+            self.universities = universities
+            self.numberOfUniversities = self.universities.count
         }
     }
     
